@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { useLogin } from "../../hooks/useLogin"
 
 export default function Login() {
@@ -12,6 +13,7 @@ export default function Login() {
   }
 
   return (
+
     <form onSubmit={handleSubmit} className="max-w-sm mx-auto my-14 p-5">
       <h2 className="text-2xl font-bold pb-2 mb-4 border-b-2 border-gray-400">Login</h2>
       <label className="block mb-2">
@@ -35,7 +37,9 @@ export default function Login() {
       { !isPending &&<button className="button-base">Login</button> }
       { isPending && <button className="button-base" disabled>loading...</button> }
       { error && <p className="error-badge">{error}</p> }
+      <span className="button-base float-right border-green-500 text-green-500 hover:bg-green-500"><Link to="/signup">Signup</Link></span>
 
     </form>
+   
   )
 }
